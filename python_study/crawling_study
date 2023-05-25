@@ -1,0 +1,74 @@
+# 데이터 수집 단계
+
+# 데이터 수집 -> 데이터 분석/처리 -> 인공지능 모델 학습 -> 인공지능 모델 평가 -> 평가
+
+# http://naver.com
+# http (hypertext transfer protocol)
+# request - response
+# client - server
+# html(hypertext markup language)
+# 웹사이트를 표현하기 위한 언어
+# <html></html>
+# html 파싱\
+# url ="https://www.naver.com"
+# response = requests.get(url)
+# status = response.status_code
+# html = response.text
+# print(status)
+# print(html)
+
+
+#http 상태 코드
+# 200 : ok
+# 요청 성공
+# 302 : 리다이렉트
+# 다른 페이지로 바로 연결
+# 400: Bad Request 요청이 잘못됨
+# 401: Unauthorized 비인증됨
+# 403: Forbidden 접근 권한 없음 
+# 404: Not Found 요청받은 내용이 없음
+# 405: Method Not Allowed 접근 방법이 잘못됨
+# 500 : Internal Server Error 서버 에러
+# 501 : Not Implemented
+# 502 : Bad Gateway 잘못된 응답
+
+
+# url 구조
+# 프로토콜://호스트주소:포트번호/경로?쿼리
+# http://naver.com/?~~~
+# 쿼리
+# 쿼리이름=값&쿼리이름=값&쿼리이름=값
+
+# BeautifulSoup
+# html 파싱(parsing)
+# html을 객체 구조화해서 사용
+from bs4 import BeautifulSoup
+#html태그
+# <태그이름 속성=속성값>내용</태그이름>
+html ="<html><body>Hello</body></html>"
+# <html></html>
+soup = BeautifulSoup(html, "html.parser")
+print(soup.body.text)
+print(type(soup.body.text))
+
+import requests
+from bs4 import BeautifulSoup
+search_url="https://www.google.com/search?q="
+keyword ="맥주"
+url = search_url +keyword
+response =requests.get(url)
+html = response.text
+print(response.text)
+print(type(response.text))
+soup =BeautifulSoup(html,"html.parser")
+print(soup.find_all('div')[4])
+container = soup.find('div',attrs={'id':'container'})
+for i in container.find_all('img'):
+        print(i['class'])
+print(img)
+# 셀리니움(selenium)
+
+for headline in headlines:
+        # 과제: crawlin_result 폴더의 
+        # headlines.txt 파일에 저장하기
+        print(headline.text.strip)

@@ -67,16 +67,15 @@ li_3=[532,5941,54682,58,5]
 
 for x,y,z in zip(li_1, li_2, li_3):
     print(x+y+z)
-i =0
+    i =0
 
-while i <5:
-    print(li_1[i]+li_2[i]+li_3[i])
+    while i <5:
+     print(li_1[i]+li_2[i]+li_3[i])
     i +=1
 
 # zip()
 # 길이가 같은 list를 묶어서 for문 등으로 
 # 사용가능한 iterable을 반환한다
-
 
 #정수를 입력받고 1부터 입력받은
 #정수까지 모두 출력하세요
